@@ -1,16 +1,15 @@
 import {StyleSheet, Text, View} from "react-native";
+import Timer from "../components/timer";
 
-const Timer = () => {
+const HomeScreen = () => {
     return (
         <>
-            <View style={styles.container}>
-                <Text>Hello</Text>
-            </View>
+            <Timer />
         </>
     )
 }
 
-export default Timer;
+export default HomeScreen;
 
 const styles = StyleSheet.create({
     container: {
