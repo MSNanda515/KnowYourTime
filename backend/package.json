@@ -1,0 +1,22 @@
+{
+  "name": "knowyourtime",
+  "version": "1.0.0",
+  "description": "time logging and optimization app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MSNanda515/KnowYourTime.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MSNanda515/KnowYourTime/issues"
+  },
+  "homepage": "https://github.com/MSNanda515/KnowYourTime#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
