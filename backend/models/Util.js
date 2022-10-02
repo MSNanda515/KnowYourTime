@@ -11,5 +11,20 @@ module.exports = {
                 }
             ],
         }
+    },
+
+    getDefaultCategories: () => {
+        return [
+            {
+                name: "Sleep",
+                icon: "brain",
+                color: "black",
+            },
+            {
+                name: "Study",
+                icon: "city",
+                color: "blue",
+            },
+        ]
     }
 }

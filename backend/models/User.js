@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const ActivityLogSchema = require("./ActivityLogSchema");
+const Category = require("./Category");
 
 const UserSchema = new mongoose.Schema(
     {
@@ -11,6 +12,7 @@ const UserSchema = new mongoose.Schema(
             type: String,
             required: true
         },
+        category: [Category],
         activity: [ActivityLogSchema]
     },
     { collection: 'users' }

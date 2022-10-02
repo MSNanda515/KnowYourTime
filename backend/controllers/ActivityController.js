@@ -12,13 +12,5 @@ module.exports = {
         res.status(200).json({ message: req.body })
     },
 
-    addDemoUser: async (req, res) => {
-        const newUser = util.getDefaultUser();
-        let dbRep = await UserService.createUser(newUser);
-        if (dbRep === "") {
-            res.status(201).json("Created Successfully: " + JSON.stringify(newUser))
-        } else {
-            res.status(500).json({ message: dbRep})
-        }
-    },
+
 }
