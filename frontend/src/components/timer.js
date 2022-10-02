@@ -1,6 +1,9 @@
-import {Button, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {Button, StyleSheet, Text, TouchableOpacity, View,Image,TouchableHighlight} from "react-native";
 import Attention from "./attention";
 import React, { useState, useEffect } from 'react';
+import Play from "react-native-vector-icons/Entypo"
+import Pause from "react-native-vector-icons/AntDesign"
+import Stop from "react-native-vector-icons/Entypo"
 import constants from "../constants";
 
 const endpoint = "activity";
@@ -64,13 +67,23 @@ const Timer = ({text}) => {
                     <Text style={styles.timeText}>{getSec(sec)}</Text>
                 </View>
 
-                <Button onPress={() => setRunning(true)} title={"Start"} />
-                <Button onPress={() => setRunning(false)} title={"Pause"} />
-                <TouchableOpacity style={styles.buttonAlt} onPress={onStopHandler}>
-                    <Text style={styles.buttonAltText}>Stop</Text>
-                </TouchableOpacity>
-                <Text>Message: {message}</Text>
-                <Text>error: {isError}</Text>
+                {/* <Button onPress={() => setRunning(true)} title={"Start"} /> */}
+                <View style={styles.Buttonpress}>
+                    <TouchableOpacity onPress={() => setRunning(true)}>
+                        <Play name="controller-play" size={60}/>
+                        {/* <Image source = {require('../../assets/Buttonstop.png')} style ={styles.buttonAltText}/> */}
+                    </TouchableOpacity>
+                    {/* <Button onPress={() => setRunning(false)} title={"Pause"} /> */}
+                    <TouchableOpacity onPress={() => setRunning(false)}>
+                        <Pause name="pause" size={60}/>
+                        {/* <Image source = {require('../../assets/Buttonstop.png')} style ={styles.buttonAltText}/> */}
+                    </TouchableOpacity>
+                    
+                    <TouchableOpacity style={styles.buttonAlt} onPress={onStopHandler}>
+                        <Stop name="controller-stop" size={60}/>
+                        {/* <Text style={styles.buttonAltText}>Stop</Text> */}
+                    </TouchableOpacity>
+                </View>
             </View>
         </>
     )
@@ -97,8 +110,10 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: "#FDF3F2",
-        marginLeft: "auto",
+        backgroundColor: "#FFB6C1",
+        
+    },Buttonpress:{
+        flexDirection:"row"
     },
     timeView: {
         margin: 20,
@@ -110,16 +125,6 @@ const styles = StyleSheet.create({
     timeText: {
         fontSize: 30,
         fontWeight: "bold",
-    },
-    buttonAlt: {
-        width: '90%',
-        borderWidth: 1,
-        height: 50,
-        borderRadius: 50,
-        borderColor: 'black',
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginVertical: 5,
     },
     buttonAltText: {
         color: 'black',
