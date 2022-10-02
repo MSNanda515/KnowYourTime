@@ -1,13 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View} from 'react-native';
 import ImagesExample from './image.js';
+import OneButton from './button.js';
 
 
-const Textword =()=> (
+const Textword =({navigation})=> (
     <View style={styles.container}>
       <Text style={styles.title}>Know your Time !</Text>
       <StatusBar style="auto" />
       <ImagesExample />
+      <OneButton navigation={navigation}/>
     </View>
 )
 
