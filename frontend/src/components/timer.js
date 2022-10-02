@@ -25,11 +25,15 @@ const Timer = ({text}) => {
     }, [running]);
 
     const onStopHandler = () => {
-        let url = constants.getUrl(endpoint);
-        console.log("Function called")
+        let userId = constants.getUserId();
+        let uploadActivity = `user/${userId}/activity`
+        let url = constants.getUrl(uploadActivity);
         const payload = {
-            time: sec,
-            user: "mehar",
+            "activity": {
+                "category": text,
+                "start": Date.now(),
+                "duration": sec,
+            }
         };
         fetch(url, {
             method: 'POST',
@@ -51,6 +55,7 @@ const Timer = ({text}) => {
                 } catch (err) {
                     console.log(err);
                 };
+                setSec(0);
             })
             .catch(err => {
                 console.log(err);

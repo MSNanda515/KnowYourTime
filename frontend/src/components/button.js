@@ -17,6 +17,7 @@ const OneButton = ({navigation}) => {
         <TouchableOpacity onPress={()=>navigation.navigate("HomeScreen", {"text": "Reading"})} style={styles.ButtonContainer4}><Text>Reading</Text></TouchableOpacity>
         <TouchableOpacity onPress={()=>navigation.navigate("HomeScreen", {"text": "Meditation"})} style={styles.ButtonContainer5}><Text>Meditation</Text></TouchableOpacity>
         <TouchableOpacity onPress={()=>navigation.navigate("HomeScreen", {"text": "Coding"})} style={styles.ButtonContainer6}><Text>Coding</Text></TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.navigate("Activity", {"text": "Past Activities"})} style={styles.ButtonContainer1}><Text>Past Activities</Text></TouchableOpacity>
       </View>
     );
   }

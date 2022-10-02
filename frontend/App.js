@@ -9,6 +9,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Frontscreen from './src/screens/frontscreen';
 import HomeScreen from './src/screens/HomeScreen';
 import OneButton from './src/components/button';
+import Activities from "./src/components/activities";
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +20,7 @@ export default function App() {
         <Stack.Screen name="Frontscreen" component={Frontscreen} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
         <Stack.Screen name="OneButton" component={OneButton} />
+        <Stack.Screen name="Activity" component={Activities} />
       </Stack.Navigator>
     </NavigationContainer>
   );
