@@ -8,7 +8,6 @@ const HomeScreen = () => {
     return (
         <>
             <Timer />
-            <Button/> 
         </>
     )
 }
