@@ -1,11 +1,14 @@
-const express = require('express');
-const app = express();
-const port = 8080;
+const dotenv = require('dotenv')
+dotenv.config()
+const express = require('express')
+const cors = require('cors')
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
+const db = require('./db')
+const activityRoutes = require('./routes/ActivityRoutes')
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+const app = express()
+app.use(cors())
+app.use(express.json())
+app.use('/api/v1/activity', activityRoutes)
+
+app.listen(process.env.PORT || 3000)
