@@ -7,15 +7,18 @@ module.exports = {
         res.status(200).json({ message: "Hello" })
     },
 
-    getCategories: (req, res) => {
+    getCategories: async (req, res) => {
         let userId = req.params.userId;
-
-        res.status(200).json();
+        let resp = await UserService.getCategories(userId)
+        if (resp[0] == -1) {
+            res.status(500).json({message: resp[1]});
+        } else {
+            res.status(200).json({message: resp[1]});
+        }
     },
 
     addCategories: (req, res) => {
         let userId = req.params.userId;
-
         res.status(200).json();
     },
 

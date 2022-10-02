@@ -42,4 +42,12 @@ module.exports = {
             return err.message;
         }
     },
+
+    getCategories: async function(userId) {
+        let user = await this.getUser(userId);
+        if (user === -1) {
+            return [-1, "User not found"];
+        }
+        return [0, user.category];
+    }
 }
