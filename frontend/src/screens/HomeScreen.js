@@ -5,6 +5,7 @@ const HomeScreen = () => {
     return (
         <>
             <Timer />
+            {/*<Blink />*/}
         </>
     )
 }
