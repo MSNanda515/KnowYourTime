@@ -10,4 +10,7 @@ routes.get('/default/user', UserController.addDemoUser)
 routes.get('/:userId/categories', UserController.getCategories);
 routes.get('/:userId/default/categories', UserController.addDefaultCategories);
 
+routes.post('/:userId/activity', UserController.addActivityLog);
+routes.get('/:userId/activities', UserController.getActivities);
+
 module.exports = routes

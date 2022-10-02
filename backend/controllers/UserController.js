@@ -42,4 +42,25 @@ module.exports = {
             res.status(500).json({ message: dbRep})
         }
     },
+
+    addActivityLog: async (req, res) => {
+        let activity = req.body.activity;
+        let userId = req.params.userId;
+        let resp = await UserService.addActivity(userId, activity);
+        if (resp === "") {
+            res.status(201).json("Created Successfully: " + JSON.stringify(activity))
+        } else {
+            res.status(500).json(resp);
+        }
+    },
+
+    getActivities: async (req, res) => {
+        let userId = req.params.userId;
+        let resp = await UserService.getAllActivities(userId)
+        if (resp[0] == -1) {
+            res.status(500).json({message: resp[1]});
+        } else {
+            res.status(200).json({message: resp[1]});
+        }
+    },
 }
