@@ -5,7 +5,7 @@ import constants from "../constants";
 
 const endpoint = "activity";
 
-const Timer = () => {
+const Timer = ({text}) => {
     const [sec, setSec] = useState(0);
     const [running, setRunning] = useState(false);
     const [isError, setIsError] = useState(false);
@@ -57,7 +57,7 @@ const Timer = () => {
     return (
         <>
             <View style={styles.container}>
-                <Attention />
+                <Attention text={text}/>
                 <View style={styles.timeBox}>
                     <Text style={styles.timeText}>{getHour(sec)}:</Text>
                     <Text style={styles.timeText}>{getMin(sec)}:</Text>

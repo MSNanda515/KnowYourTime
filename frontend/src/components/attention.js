@@ -2,12 +2,12 @@ import {StyleSheet, Text, View} from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome5';
 // import {BiBrain} from "react-icons/all";
 
-const Attention = () => {
+const Attention = ({text}) => {
     return (
         <>
             <View style={styles.container}>
                 <Icon name="brain" size={20}/>
-                <Text style={styles.level}>Focus</Text>
+                <Text style={styles.level}>{text}</Text>
             </View>
         </>
     )
