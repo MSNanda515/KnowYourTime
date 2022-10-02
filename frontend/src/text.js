@@ -16,25 +16,15 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: '#FFB6C1',
       alignItems: 'center',
-      //justifyContent: 'center',
-      
-    
     },
     title:{
-      // width: 694,
-      // height: 247,
       fontfamily: 'Roboto', 
       alignitems: 'center',
       color: "#D13F3F",
-      // flex: "none",
-      // order: 0,
-      // flexGrow: 0,
       fontWeight: "bold",
       padding:24,
       fontSize:40,
       marginTop:120,
-  
-  
     }
 })
 
