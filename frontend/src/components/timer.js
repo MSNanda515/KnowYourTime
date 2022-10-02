@@ -90,6 +90,8 @@ const getSec = (sec) => (
 
 export default Timer;
 
+
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
