@@ -4,13 +4,15 @@ const Timer = () => {
     return (
         <>
             <View style={styles.container}>
-                <Text>Hello</Text>
+                <Text></Text>
             </View>
         </>
     )
 }
 
 export default Timer;
+
+
 
 const styles = StyleSheet.create({
     container: {
